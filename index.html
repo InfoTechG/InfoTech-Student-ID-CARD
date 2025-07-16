@@ -4,18 +4,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JNC Edukasi</title>
-  <link rel="icon"
-    href="https://static.vecteezy.com/system/resources/previews/016/716/181/large_2x/website-3d-icon-png.png"
-    type="image/x-icon">
+  <title>InfoTech Student ID Card</title>
+  <!-- Registration Icon Favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" type="image/png">
+
   <style>
-    html,
-    body {
+    /* Base Reset */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
       height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #007BFF, #00C6FF, #6A11CB);
+      background-size: 400% 400%;
+      animation: backgroundGradient 10s ease infinite;
       overflow: hidden;
-      font-family: sans-serif;
+      color: white;
+    }
+
+    @keyframes backgroundGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .iframe-container {
@@ -30,24 +53,55 @@
       border: none;
     }
 
+    /* Loader Styling */
     .loader {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 1.2rem;
-      color: #666;
+      text-align: center;
       z-index: 10;
+    }
+
+    .loader .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #ffffff60;
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px;
+    }
+
+    .loader p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="iframe-container">
-    <div class="loader" id="loader">Loading app...</div>
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+      <p>Loading InfoTech Student ID Card App...</p>
+    </div>
     <iframe
       src="https://script.google.com/macros/s/AKfycbx7jNfghV3j15h8y8p6_Dd5AaSZU4sraBgkjnet2OHbS_1doDne1VqWspFWv2CTlx2tQQ/exec"
-      title="JNCfy Web App" onload="document.getElementById('loader').style.display='none';" allowfullscreen>
+      title="InfoTech Student ID Card Web App"
+      onload="document.getElementById('loader').style.display = 'none';"
+      allowfullscreen>
     </iframe>
   </div>
 </body>
